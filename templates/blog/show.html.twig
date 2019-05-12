@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %} {% block body %}
+<article>
+  <h2>{{ article.title }}</h2>
+  <div class="metadata">
+    écrit le {{article.createdAt | date('d/m/Y')}} à
+    {{article.createdAt | date('H:i')}}
+  </div>
+  <div class="content">
+    <img src="{{ article.image }}" />
+    {{ article.content | raw }}
+  </div>
+</article>
+<a href="{{ path('blog') }}" class="btn btn-primary">Retour</a>
+{% endblock %}
